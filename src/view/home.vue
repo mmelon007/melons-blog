@@ -37,6 +37,9 @@ export default {
     "info-slider": infoSlider,
     "blog-list": blogList,
   },
+  created () {
+    this.activeName = "All";
+  },
   data() {
     return {
       activeName: "",
