@@ -8,7 +8,9 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
 import VueRouter from "vue-router";
-import Route from "./route";
+import Routes from "./routes";
+
+import { store } from './store/store';
 
 Vue.config.productionTip = false;
 
@@ -16,11 +18,12 @@ Vue.use(ElementUI);
 
 Vue.use(VueRouter);
 const router = new VueRouter({
-  route: Route,
+  routes: Routes,
   mode: "history",
 });
 
 new Vue({
-  render: (h) => h(App),
   router: router,
+  store: store,
+  render: (h) => h(App)  
 }).$mount("#app");

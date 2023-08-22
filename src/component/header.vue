@@ -1,12 +1,14 @@
 <template>
-  <div id="app-header">
+  <div id="blog-header">
     <div class="logo">Melon</div>
-    <ul class="header-links">
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/blogs">Blogs</router-link></li>
-      <li><router-link to="/contact">Contact Us</router-link></li>
-      <li><router-link to="/">More</router-link></li>
-    </ul>
+    <nav>
+      <ul class="header-links">
+        <li><router-link to="/" exact>Home</router-link></li>
+        <li><router-link to="/blogs" exact>Blogs</router-link></li>
+        <li><router-link to="/contact" exact>Contact Us</router-link></li>
+        <li><router-link to="/" exact>More</router-link></li>
+      </ul>
+    </nav>
     <el-input
       placeholder="请输入内容"
       suffix-icon="el-icon-search"

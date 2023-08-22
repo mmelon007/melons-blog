@@ -1,5 +1,5 @@
 <template>
-    <div id="blog-footer">
+    <div id="blog-list">
 
     </div>
 </template>
