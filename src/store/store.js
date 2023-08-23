@@ -340,6 +340,9 @@ export const store = new Vuex.Store({
     getBlogArticleById: (state) => (id) => {
       return state.blogArticle.find((article) => article.id === Number(id));
     },
+    getBlogBySearchInput: (state) => (input) => {
+      return state.blogs.filter((blog) => blog.title.includes(input));
+    },
     getCommentById: (state) => (blogId) => {
       return state.comments.filter(
         (comment) => comment.blogId === Number(blogId)

@@ -7,5 +7,6 @@ export default [
     {path: "/", component: home},
     {path: "/contact", component: contact},
     {path: "/blogs", component: blogs},
-    {path: "/blog/:id", component: blogDetail}
+    {path: "/blog/:id", component: blogDetail},
+    {path: "/blogs/:searchInput", component: blogs},
 ];

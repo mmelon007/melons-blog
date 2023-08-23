@@ -9,11 +9,8 @@
         <li><router-link to="/" exact>More</router-link></li>
       </ul>
     </nav>
-    <el-input
-      placeholder="请输入内容"
-      suffix-icon="el-icon-search"
-      v-model="searchInput"
-    >
+    <el-input placeholder="请输入内容" v-model="searchInput">
+      <el-button slot="append" icon="el-icon-search" @click="handleSearch"></el-button>
     </el-input>
   </div>
 </template>
@@ -25,6 +22,11 @@ export default {
       searchInput: "",
     };
   },
+  methods: {
+    handleSearch: function() {
+      this.$router.push({ path: `/blogs/${this.searchInput}` });
+    }
+  }
 };
 </script>
 

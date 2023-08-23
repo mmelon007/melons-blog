@@ -3,7 +3,7 @@
     <ul>
       <li v-for="blog in showBlogs" :key="blog.id">
         <div class="blog-date">{{ blog.date }}</div>
-        <router-link v-bind:to="'blog/' + blog.id">
+        <router-link v-bind:to="'/blog/' + blog.id">
           <div class="blog-title">{{ blog.title }}</div>
         </router-link>
         <div class="blog-tags">
