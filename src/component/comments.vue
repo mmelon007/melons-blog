@@ -1,5 +1,6 @@
 <template>
   <div id="comments">
+    <add-comment></add-comment>
     <div
       class="comment-box"
       v-for="(comment, index) in getCommentById(id)"
@@ -33,6 +34,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import addComment from "./addComment.vue";
 
 export default {
   props: ["id"],
@@ -41,6 +43,9 @@ export default {
   },
   data() {
     return {};
+  },
+  components: {
+    "add-comment": addComment,
   },
 };
 </script>
