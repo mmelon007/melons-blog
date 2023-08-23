@@ -274,36 +274,43 @@ export const store = new Vuex.Store({
     comments: [
       {
         blogId: 1,
-        dialogs: [
-          {
-            id: 1,
-            userId: 1,
-            time: "2 Minutes ago",
-            content:
-              "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. ",
-            replys: [
-              {
-                replyId: 2,
-                content:
-                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-                time: "Just now",
-              },
-            ],
-          },
-        ],
+        dialog: {
+          id: 1,
+          userId: 1,
+          time: "2 Minutes ago",
+          content:
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. ",
+          replys: [
+            {
+              replyId: 2,
+              content:
+                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+              time: "Just now",
+            },
+          ],
+        },
       },
       {
         blogId: 1,
-        dialogs: [
-          {
-            id: 1,
-            userId: 2,
-            time: "2 Minutes ago",
-            content:
-              "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. ",
-            replys: [],
-          },
-        ],
+        dialog: {
+          id: 1,
+          userId: 2,
+          time: "2 Minutes ago",
+          content:
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. ",
+          replys: [],
+        },
+      },
+      {
+        blogId: 2,
+        dialog: {
+          id: 1,
+          userId: 2,
+          time: "2 Minutes ago",
+          content:
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. ",
+          replys: [],
+        },
       },
     ],
   },

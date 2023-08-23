@@ -6,17 +6,13 @@
     <div class="article">
       {{ getBlogArticleById(id) }}
     </div>
-    <div class="comment">
-      {{ getCommentById(id) }}
-    </div>
-    <div class="user">
-      {{ getUserInfoById(id) }}
-    </div>
+    <comments :id="id"></comments>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import comments from "../component/comments.vue";
 
 export default {
   data() {
@@ -24,13 +20,11 @@ export default {
       id: this.$route.params.id,
     };
   },
+  components: {
+    comments: comments,
+  },
   computed: {
-    ...mapGetters([
-      "getBlogArticleById",
-      "getCommentById",
-      "getUserInfoById",
-      "getBlogInfoById",
-    ]),
+    ...mapGetters(["getBlogArticleById", "getBlogInfoById"]),
   },
 };
 </script>
