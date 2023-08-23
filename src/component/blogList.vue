@@ -3,7 +3,9 @@
     <ul>
       <li v-for="blog in showBlogs" :key="blog.id">
         <div class="blog-date">{{ blog.date }}</div>
-        <div class="blog-title">{{ blog.title }}</div>
+        <router-link v-bind:to="'blog/' + blog.id">
+          <div class="blog-title">{{ blog.title }}</div>
+        </router-link>
         <div class="blog-tags">
           <template v-for="(tag, index) in blog.tags">
             <div v-if="index < 3" :key="index">
@@ -60,9 +62,9 @@ export default {
         this.currentPage++;
       }
     },
-    handleCurrentChange: function(val){
-        this.currentPage = val;
-    }
+    handleCurrentChange: function (val) {
+      this.currentPage = val;
+    },
   },
 };
 </script>
