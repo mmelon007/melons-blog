@@ -1,8 +1,8 @@
 <template>
   <div id="home">
-    <info-slider></info-slider>
+    <info-slider class="info-slider"></info-slider>
     <div class="blog-tabs">
-      <div class="tabs-title">Recent</div>
+      <div class="tabs-title header1">Recent</div>
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="All" name="All">
           <blog-list 
@@ -56,4 +56,27 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#home{
+  display: grid;
+  grid-template-columns: 288px 736px;
+  column-gap: 96px;
+  margin: 96px auto;
+  width: 1120px;
+  .blog-tabs{
+    height: 900px;
+  }
+  /deep/ .el-tabs__item.is-active{
+    color: #474747;
+  }
+  /deep/ .el-tabs__item{
+    color: #8a8a8a;
+  }
+  /deep/ .el-tabs__item:hover{
+    color: #474747;
+  }
+  /deep/ .el-tabs__active-bar{
+    background-color: #777777;
+  }
+}
+</style>

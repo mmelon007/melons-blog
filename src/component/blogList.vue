@@ -1,21 +1,23 @@
 <template>
   <div id="blog-list">
     <ul>
-      <li v-for="blog in showBlogs" :key="blog.id">
-        <div class="blog-date">{{ blog.date }}</div>
+      <li v-for="(blog, index) in showBlogs" :key="blog.id" class="blog-item">
+        <div class="blog-date small-text">{{ blog.date }}</div>
+        <br />
         <router-link v-bind:to="'/blog/' + blog.id">
-          <div class="blog-title">{{ blog.title }}</div>
+          <div class="blog-title header1">{{ blog.title }}</div>
         </router-link>
         <div class="blog-tags">
           <template v-for="(tag, index) in blog.tags">
-            <div v-if="index < 3" :key="index">
+            <div v-if="index < 3" :key="index" class="tags">
               {{ tag }}
             </div>
-            <div v-else-if="index == 3" :key="index">
+            <div v-else-if="index == 3" :key="index" class="tags">
               +{{ blog.tags.length - 3 }}
             </div>
           </template>
         </div>
+        <hr v-if="index % 3 != 0 || index === 0" />
       </li>
     </ul>
     <el-pagination
@@ -69,4 +71,41 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+ul {
+  padding-top: 40px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 96px;
+  margin-bottom: 92px;
+}
+hr {
+  margin-top: 48px;
+  background-color: #DFDFDF;
+  color: #DFDFDF;
+  height: 1px;
+  border: 0;
+}
+.blog-item {
+  height: 94px;
+  width: 734px;
+
+  div {
+    display: inline-block;
+  }
+  .blog-title {
+    width: 544px;
+    height: 60px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .blog-tags {
+    width: 190px;
+    text-align: right;
+    div {
+      margin-left: 4px;
+      margin-top: 4px;
+    }
+  }
+}
+</style>

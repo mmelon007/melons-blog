@@ -18,4 +18,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#app{
+  width: 1440px;
+}
+
+</style>
