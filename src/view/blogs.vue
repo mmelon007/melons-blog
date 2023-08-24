@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="blogs">
         <blog-list v-if="!searchInput" :blogs="getAllBlogs"></blog-list>
         <blog-list v-else :blogs="getBlogBySearchInput(searchInput)"></blog-list>
     </div>
@@ -25,4 +25,9 @@ export default{
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#blogs{
+    margin: auto;
+    width: 735px;
+}
+</style>
