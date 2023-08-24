@@ -63,6 +63,9 @@ export default {
   column-gap: 96px;
   margin: 96px auto;
   width: 1120px;
+  .tabs-title{
+    margin-bottom: 24px;
+  }
   .blog-tabs{
     height: 900px;
   }
