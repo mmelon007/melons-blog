@@ -3,14 +3,15 @@ import App from "./App.vue";
 
 import "./style/theme.scss";
 import "./style/common.css";
+import "./style/theme.scss";
 
 import ElementUI from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
+import "./style/theme/index.css";
 
 import VueRouter from "vue-router";
 import Routes from "./routes";
 
-import { store } from './store/store';
+import { store } from "./store/store";
 
 Vue.config.productionTip = false;
 
@@ -25,5 +26,5 @@ const router = new VueRouter({
 new Vue({
   router: router,
   store: store,
-  render: (h) => h(App)  
+  render: (h) => h(App),
 }).$mount("#app");
