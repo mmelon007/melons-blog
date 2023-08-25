@@ -1,13 +1,11 @@
 <template>
     <div id="blogs">
-        <blog-list v-if="!searchInput" :blogs="getAllBlogs"></blog-list>
-        <blog-list v-else :blogs="getBlogBySearchInput(searchInput)"></blog-list>
+        <search-result :searchInput="searchInput"></search-result>
     </div>
 </template>
 
 <script>
-import blogList from '@/component/blogList.vue';
-import { mapGetters } from 'vuex';
+import searchResult from '@/component/searchResult.vue';
 
 export default{
     data(){
@@ -16,10 +14,12 @@ export default{
         }
     },
     components: {
-        "blog-list": blogList
+        "search-result": searchResult
     },
-    computed: {
-        ...mapGetters(["getBlogBySearchInput", "getAllBlogs"])
+    watch: {
+        searchInput : function(){
+            
+        }
     }
 }
 
