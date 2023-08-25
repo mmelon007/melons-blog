@@ -41,33 +41,27 @@ export default {
   props: ["categoryName"],
   data() {
     return {
-      showBlogs: [],
       currentPage: 1,
       pageSize: 4,
-      total: 0,
+      startIndex: 0,
     };
   },
   computed: {
     ...mapGetters(["getBlogsByCategoryName"]),
+    showBlogs() {
+      return this.getBlogsByCategoryName(this.categoryName).slice(
+        this.startIndex,
+        this.startIndex + this.pageSize
+      );
+    },
+    total() {
+      return this.getBlogsByCategoryName(this.categoryName).length;
+    },
   },
   watch: {
     currentPage: function () {
-      let startIndex = (this.currentPage - 1) * this.pageSize;
-      this.showBlogs = this.getBlogsByCategoryName(this.categoryName).slice(
-        startIndex,
-        startIndex + this.pageSize
-      );
+      this.startIndex = (this.currentPage - 1) * this.pageSize;
     },
-  },
-  created() {
-    console.log("in created");
-    this.showBlogs = this.getBlogsByCategoryName(this.categoryName).slice(
-      0,
-      this.pageSize
-    );
-    this.total = this.getBlogsByCategoryName(this.categoryName).length;
-    console.log("out created");
-    
   },
   methods: {
     previousPage: function () {

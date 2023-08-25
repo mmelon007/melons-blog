@@ -262,9 +262,8 @@ export const store = new Vuex.Store({
       try {
         const data = await axios.get("/api/blogs.json");
         let key = Object.keys(data.data);
-        console.log(key);
-        console.log(data.data[key]);
-        context.commit("initialBlogsData", data.data[key]);
+        let blogs = data.data[key];
+        context.commit("initialBlogsData", blogs);
       } catch (err) {
         console.log(err);
       }
