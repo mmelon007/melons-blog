@@ -12,15 +12,8 @@
       </ul>
     </nav>
     <div class="header-item">
-      <input
-        class="search-input"
-        placeholder="Search"
-        v-model="searchInput"
-      >
-      <button
-        @click="handleSearch"
-        class="search-btn"
-      ><img></button>
+      <input class="search-input" placeholder="Search" v-model="searchInput" />
+      <button @click="handleSearch" class="search-btn"><img /></button>
     </div>
   </div>
 </template>
@@ -34,7 +27,9 @@ export default {
   },
   methods: {
     handleSearch: function () {
-      this.$router.push({ path: `/blogs/${this.searchInput}` });
+      if (this.searchInput)
+        this.$router.push({ path: `/blogs/${this.searchInput}` });
+      else this.$router.push({ path: `/blogs` });
     },
   },
 };
@@ -53,7 +48,7 @@ export default {
   .logo {
     width: 288px;
   }
-  ul{
+  ul {
     display: grid;
     column-gap: 48px;
     grid-template-columns: repeat(4, auto);
@@ -63,6 +58,5 @@ export default {
     display: inline-block;
     text-align: center;
   }
-
 }
 </style>
