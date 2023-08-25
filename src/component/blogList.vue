@@ -23,7 +23,7 @@
     <el-pagination
       small
       layout="prev, pager, next"
-      :total="blogs.length"
+      :total="total"
       :page-size="pageSize"
       :currentPage="currentPage"
       @prev-click="previousPage"
@@ -35,23 +35,39 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  props: ["blogs"],
+  props: ["categoryName"],
   data() {
     return {
       showBlogs: [],
       currentPage: 1,
       pageSize: 4,
+      total: 0,
     };
+  },
+  computed: {
+    ...mapGetters(["getBlogsByCategoryName"]),
   },
   watch: {
     currentPage: function () {
       let startIndex = (this.currentPage - 1) * this.pageSize;
-      this.showBlogs = this.blogs.slice(startIndex, startIndex + this.pageSize);
+      this.showBlogs = this.getBlogsByCategoryName(this.categoryName).slice(
+        startIndex,
+        startIndex + this.pageSize
+      );
     },
   },
   created() {
-    this.showBlogs = this.blogs.slice(0, this.pageSize);
+    console.log("in created");
+    this.showBlogs = this.getBlogsByCategoryName(this.categoryName).slice(
+      0,
+      this.pageSize
+    );
+    this.total = this.getBlogsByCategoryName(this.categoryName).length;
+    console.log("out created");
+    
   },
   methods: {
     previousPage: function () {
@@ -60,7 +76,7 @@ export default {
       }
     },
     nextPage: function () {
-      if (this.currentPage < this.blogs.length) {
+      if (this.currentPage < this.total) {
         this.currentPage++;
       }
     },
@@ -81,8 +97,8 @@ ul {
 }
 hr {
   margin-top: 48px;
-  background-color: #DFDFDF;
-  color: #DFDFDF;
+  background-color: #dfdfdf;
+  color: #dfdfdf;
   height: 1px;
   border: 0;
 }

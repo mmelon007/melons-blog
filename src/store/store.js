@@ -1,3 +1,4 @@
+import axios from "axios";
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -5,110 +6,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    blogs: [
-      {
-        id: 1,
-        title: "Bad Design vs. Good Design: 5 Examples We can Learn From",
-        date: "September 24.2020",
-        tags: ["#HCI"],
-        category: 2,
-      },
-      {
-        id: 2,
-        title: "User Interface Design Guidelines: 10 Rules of Thumb",
-        date: "April 03.2020",
-        tags: ["#Design Thinking"],
-        category: 1,
-      },
-      {
-        id: 3,
-        title: "The 7 Factors that Influence User Experience",
-        date: "January 29.2020",
-        tags: [
-          "#HCI",
-          "#Usability",
-          "#Design Thinking",
-          "asasasdwef",
-          "dsadageqw",
-        ],
-        category: 3,
-      },
-      {
-        id: 4,
-        title: "Usability: A part of the User Experience ",
-        date: "September 14.2019",
-        tags: ["#HCI", "#Usability"],
-        category: 2,
-      },
-      {
-        id: 5,
-        title: "5Bad Design vs. Good Design: 5 Examples We can Learn From",
-        date: "September 24.2020",
-        tags: ["#HCI"],
-        category: 1,
-      },
-      {
-        id: 6,
-        title: "6User Interface Design Guidelines: 10 Rules of Thumb",
-        date: "April 03.2020",
-        tags: ["#Design Thinking"],
-        category: 3,
-      },
-      {
-        id: 7,
-        title: "7The 7 Factors that Influence User Experience",
-        date: "January 29.2020",
-        tags: [
-          "#HCI",
-          "#Usability",
-          "#Design Thinking",
-          "asasasdwef",
-          "dsadageqw",
-        ],
-        category: 2,
-      },
-      {
-        id: 8,
-        title: "8Usability: A part of the User Experience ",
-        date: "September 14.2019",
-        tags: ["#HCI", "#Usability"],
-        category: 1,
-      },
-      {
-        id: 9,
-        title: "9Bad Design vs. Good Design: 5 Examples We can Learn From",
-        date: "September 24.2020",
-        tags: ["#HCI"],
-        category: 3,
-      },
-      {
-        id: 10,
-        title: "10User Interface Design Guidelines: 10 Rules of Thumb",
-        date: "April 03.2020",
-        tags: ["#Design Thinking"],
-        category: 2,
-      },
-      {
-        id: 11,
-        title: "11The 7 Factors that Influence User Experience",
-        date: "January 29.2020",
-        tags: [
-          "#HCI",
-          "#Usability",
-          "#Design Thinking",
-          "asasasdwef",
-          "dsadageqw",
-        ],
-        category: 1,
-      },
-      {
-        id: 12,
-        title: "12Usability: A part of the User Experience ",
-        date: "September 14.2019",
-        tags: ["#HCI", "#Usability"],
-        category: 2,
-      },
-    ],
+    blogs: [],
     categories: {
       All: 0,
       "Design Theory": 1,
@@ -118,7 +16,7 @@ export const store = new Vuex.Store({
     blogArticle: [
       {
         id: 1,
-        img: '',
+        img: "",
         content: `1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -130,7 +28,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 2,
-        img: '',
+        img: "",
         content: `2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -142,7 +40,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 3,
-        img: '',
+        img: "",
         content: `3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -154,7 +52,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 4,
-        img: '',
+        img: "",
         content: `4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -166,7 +64,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 5,
-        img: '',
+        img: "",
         content: `5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -178,7 +76,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 6,
-        img: '',
+        img: "",
         content: `6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -190,7 +88,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 7,
-        img: '',
+        img: "",
         content: `7 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -202,7 +100,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 8,
-        img: '',
+        img: "",
         content: `8 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -214,7 +112,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 9,
-        img: '',
+        img: "",
         content: `9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -226,7 +124,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 10,
-        img: '',
+        img: "",
         content: `10 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -238,7 +136,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 11,
-        img: '',
+        img: "",
         content: `11 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -250,7 +148,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 12,
-        img: '',
+        img: "",
         content: `12 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis sagittis sem ac porta. Sed commodo ligula vitae mollis tristique. Maecenas egestas semper mauris. Duis tempus blandit ultrices. Proin elit nulla, viverra id suscipit quis, tristique a dolor. Sed dapibus, orci ac luctus tincidunt, massa erat porttitor odio, non imperdiet dui risus et elit.
         Information overload
         Vivamus dictum ultrices tortor. Ut imperdiet, enim in suscipit dignissim, mauris massa pellentesque augue, quis ultricies sem tortor et velit.
@@ -305,7 +203,7 @@ export const store = new Vuex.Store({
       {
         blogId: 1,
         dialog: {
-          id: 1, 
+          id: 1,
           userId: 2,
           time: "2 Minutes ago",
           content:
@@ -332,7 +230,9 @@ export const store = new Vuex.Store({
     },
     getBlogsByCategoryName: (state) => (categoryName) => {
       let categoryId = state.categories[categoryName];
-      return state.blogs.filter((blog) => blog.category === categoryId);
+      return categoryId === 0
+        ? state.blogs
+        : state.blogs.filter((blog) => blog.category === categoryId);
     },
     getBlogInfoById: (state) => (id) => {
       return state.blogs.find((blog) => blog.id === Number(id));
@@ -352,5 +252,22 @@ export const store = new Vuex.Store({
       return state.users.find((user) => user.userId === Number(userId));
     },
   },
-  mutations: {},
+  mutations: {
+    initialBlogsData: (state, blogs) => {
+      state.blogs = blogs;
+    },
+  },
+  actions: {
+    initialBlogsData: async (context) => {
+      try {
+        const data = await axios.get("/api/blogs.json");
+        let key = Object.keys(data.data);
+        console.log(key);
+        console.log(data.data[key]);
+        context.commit("initialBlogsData", data.data[key]);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  },
 });
