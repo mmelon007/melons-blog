@@ -1,7 +1,7 @@
-import home from './view/home.vue'
-import login from './view/login.vue'
+import home from "./view/home.vue";
+import login from "./view/login.vue";
 
 export default [
-    {path: "/", component: login},
-    {path: "/home/:userId", component: home},
+  { path: "/", component: login },
+  { path: "/home/:userId", component: home },
 ];

@@ -62,23 +62,26 @@ export const store = new Vuex.Store({
   mutations: {
     loginValidate: (state, data) => {
       for (let user in state.users) {
-        if (state.users[user].userId === data.userId && state.users[user].pass === data.pass) {
+        if (
+          state.users[user].userId === data.userId &&
+          state.users[user].pass === data.pass
+        ) {
           state.isLogin = true;
           break;
         }
       }
     },
-    checkNews:(state, data) => {
-        let listName = data.listName;
-        let newsId = data.newsId;
-        console.log('list: '+ listName + ' id : '+ newsId + ' is checked!');
-        let arr = state[listName];
-        for(let i = 0; i < arr.length; ++ i){
-            if(arr[i].newsID === Number(newsId)){
-                arr[i].checked = true;
-                break;
-            }
+    checkNews: (state, data) => {
+      let listName = data.listName;
+      let newsId = data.newsId;
+      console.log("list: " + listName + " id : " + newsId + " is checked!");
+      let arr = state[listName];
+      for (let i = 0; i < arr.length; ++i) {
+        if (arr[i].newsID === Number(newsId)) {
+          arr[i].checked = true;
+          break;
         }
-    }
+      }
+    },
   },
 });

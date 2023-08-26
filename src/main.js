@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './style/theme.scss'
-import './style/common.css'
+import Vue from "vue";
+import App from "./App.vue";
+import "./style/theme.scss";
+import "./style/common.css";
 
-import { store } from './store/store';
+import { store } from "./store/store";
 
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
@@ -17,10 +17,10 @@ const router = new VueRouter({
   mode: "history",
 });
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
-  router:router,
+  router: router,
   store: store,
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");
