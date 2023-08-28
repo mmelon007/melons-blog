@@ -2,6 +2,8 @@ import home from './view/home.vue'
 import blogs from './view/blogs.vue'
 import contact from './view/contact.vue'
 import blogDetail from './view/blogDetail.vue'
+import statics from './view/statics.vue'
+
 
 export default [
     {path: "/", component: home},
@@ -9,4 +11,5 @@ export default [
     {path: "/blogs", component: blogs},
     {path: "/blog/:id", component: blogDetail},
     {path: "/blogs/:searchInput", component: blogs},
+    {path: "/statics", component: statics},
 ];

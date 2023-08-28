@@ -8,7 +8,7 @@
         <li>
           <router-link to="/contact" class="tabs" exact>Contact Us</router-link>
         </li>
-        <li><router-link to="/" class="tabs" exact>More</router-link></li>
+        <li><router-link to="/statics" class="tabs" exact>Statics</router-link></li>
       </ul>
     </nav>
     <div class="header-item">
