@@ -13,11 +13,9 @@ import Routes from "./routes";
 
 import { store } from "./store/store";
 
-// import axios from "axios";
-// // Vue.prototype.$axios = axios;
-// // axios.
+import * as echarts from 'echarts';
 
-
+Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
